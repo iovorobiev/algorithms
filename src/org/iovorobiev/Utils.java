@@ -1,4 +1,4 @@
-package com.company;
+package org.iovorobiev;
 
 import java.util.List;
 

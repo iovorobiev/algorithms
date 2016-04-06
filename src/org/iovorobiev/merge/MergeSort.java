@@ -1,4 +1,4 @@
-package com.company.merge;
+package org.iovorobiev.merge;
 
 public class MergeSort {
 

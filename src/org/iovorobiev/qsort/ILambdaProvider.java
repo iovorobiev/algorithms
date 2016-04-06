@@ -1,4 +1,4 @@
-package com.company.qsort;
+package org.iovorobiev.qsort;
 
 /**
  * Created by vorobievilya on 02/04/16.

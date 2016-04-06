@@ -1,9 +1,8 @@
-package com.company.heap;
+package org.iovorobiev.heap;
 
-import com.company.Utils;
+import org.iovorobiev.Utils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 //Min heap based on binary tree
 public class Heap {

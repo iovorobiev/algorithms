@@ -1,13 +1,9 @@
-package com.company;
+package org.iovorobiev;
 
-import com.company.heap.Heap;
-import com.company.qsort.MedianLambdaProvider;
-import com.company.merge.MergeSort;
-import com.company.qsort.QSort;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
+import org.iovorobiev.heap.Heap;
+import org.iovorobiev.qsort.MedianLambdaProvider;
+import org.iovorobiev.merge.MergeSort;
+import org.iovorobiev.qsort.QSort;
 
 public class Main {
 

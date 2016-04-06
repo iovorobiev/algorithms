@@ -1,8 +1,6 @@
-package com.company.qsort;
+package org.iovorobiev.qsort;
 
-import com.company.Utils;
-
-import javax.rmi.CORBA.Util;
+import org.iovorobiev.Utils;
 
 /**
  * Created by vorobievilya on 02/04/16.

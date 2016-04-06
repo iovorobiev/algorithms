@@ -1,6 +1,6 @@
-package com.company.qsort;
+package org.iovorobiev.qsort;
 
-import com.company.Utils;
+import org.iovorobiev.Utils;
 
 public class QSort {
 
