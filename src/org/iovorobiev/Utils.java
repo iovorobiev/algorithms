@@ -30,4 +30,19 @@ public class Utils {
             System.out.println();
         }
     }
+
+    public static long findNextPrime(long n) {
+        long result = n + 1;
+        while(!isPrime(result)) {
+            result++;
+        }
+        return result;
+    }
+
+    private static boolean isPrime(long n) {
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
 }

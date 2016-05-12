@@ -1,5 +1,8 @@
 package org.iovorobiev;
 
+import javafx.util.Pair;
+import org.iovorobiev.hashing.PerfectHashMap;
+import org.iovorobiev.hashing.UniversalHashMap;
 import org.iovorobiev.heap.Heap;
 import org.iovorobiev.qsort.MedianLambdaProvider;
 import org.iovorobiev.merge.MergeSort;
@@ -10,6 +13,22 @@ public class Main {
     final static int TEST_NUM = 1000;
 
     public static void main(String[] args) {
+        universalHashMap();
+    }
+
+    private static void universalHashMap() {
+        UniversalHashMap hashMap = new UniversalHashMap();
+        short[] keys = new short[322];
+
+        for (int i = 0; i < 322; i++) {
+            keys[i] = (short) (Math.random() * Short.MAX_VALUE * 2 - Short.MAX_VALUE);
+            String value = Short.toString(keys[i]);
+            hashMap.put(keys[i], value);
+        }
+        hashMap.printContent();
+    }
+
+    private static void makeTests() {
         for (int i = 0; i < TEST_NUM; i++) {
             if (!heapSort()) {
                 return;
