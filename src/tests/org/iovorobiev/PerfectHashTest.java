@@ -15,7 +15,17 @@ public class PerfectHashTest extends TestCase {
         super.setUp();
         input = new Pair[ITEMS];
         for (int i = 0; i < input.length; i++) {
-            short key = (short) (Math.random() * (Short.MAX_VALUE * 2 - 12) - Short.MAX_VALUE);
+            short key;
+            boolean isUnique = true;
+            do {
+                key = (short) (Math.random() * (Short.MAX_VALUE * 2 - 12) - Short.MAX_VALUE);
+                for (int j = 0; j < i; j++) {
+                    if (input[j].getKey() == key) {
+                        isUnique = false;
+                        break;
+                    }
+                }
+            } while (!isUnique);
             input[i] = new Pair<>(key, Short.toString(key));
         }
     }

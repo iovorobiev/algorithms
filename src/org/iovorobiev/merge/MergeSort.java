@@ -2,12 +2,15 @@ package org.iovorobiev.merge;
 
 public class MergeSort {
 
-    public MergeSort(int[] array) {
+    public MergeSort(int[] array, boolean lowMemory) {
         int size = 1;
         while (size < array.length) {
             for (int i = 0; i < array.length; i += 2 * size) {
-//                merge(array, i, i + size - 1, i + size, i + 2 * size - 1);
-                mergeLowMemory(array, i, i + size - 1, i + size, i + 2 * size - 1);
+                if (lowMemory) {
+                    mergeLowMemory(array, i, i + size - 1, i + size, i + 2 * size - 1);
+                } else {
+                    merge(array, i, i + size - 1, i + size, i + 2 * size - 1);
+                }
             }
             size *= 2;
         }
@@ -40,9 +43,7 @@ public class MergeSort {
                 firstIter++;
             }
         }
-        for (int i = 0; i < merged.length; i++) {
-            array[iStart + i] = merged[i];
-        }
+        System.arraycopy(merged, 0, array, iStart, merged.length);
     }
 
     private void mergeLowMemory(int[] array, int iStart, int iEnd, int jStart, int jEnd) {
@@ -52,20 +53,12 @@ public class MergeSort {
         if (jEnd > array.length - 1) {
             jEnd = array.length - 1;
         }
-//        for (int i = 0; i < array.length; i++) {
-//            System.out.print(array[i] + " ");
-//        }
-//
-//        System.out.println();
-//        System.out.println(iStart + " " + iEnd + " " + jStart + " " + jEnd);
 
         int firstLength = iEnd - iStart;
         int secondLength = jEnd - jStart;
         int fullLength = firstLength + secondLength + 2;
         int[] merged = new int[firstLength + 1];
-        for (int i = 0; i <= firstLength; i++) {
-            merged[i] = array[iStart + i];
-        }
+        System.arraycopy(array, iStart, merged, 0, firstLength + 1);
         int firstIter = 0;
         int secondIter = jStart;
         for (int i = 0; i < fullLength; i++) {

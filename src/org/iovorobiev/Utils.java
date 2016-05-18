@@ -15,11 +15,11 @@ public class Utils {
         array.set(j, buf);
     }
 
-    static void initRandomArray(int[] array) {
+    public static void initRandomArray(int[] array) {
         initRandomArray(array, true);
     }
 
-    static void initRandomArray(int[] array, boolean withOutput) {
+    public static void initRandomArray(int[] array, boolean withOutput) {
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 1000);
             if (withOutput) {
