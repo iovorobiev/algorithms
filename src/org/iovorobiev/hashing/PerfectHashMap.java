@@ -99,7 +99,7 @@ public class PerfectHashMap {
         }
 
         void rearrange() {
-            maxCapacity = content.size();
+            maxCapacity = 3 * content.size() * content.size();
             p = (int) Utils.findNextPrime(maxCapacity);
             Pair<Short, String>[] arrangedContent;
             boolean hasCollisions;
@@ -120,8 +120,8 @@ public class PerfectHashMap {
         }
 
         private void initRandomHash() {
-            a = (int) (Math.random() * (p - 2)  + 1);
-            b = (int) (Math.random() * (p - 1));
+            a = (int) Math.round (Math.random() * (p - 2)  + 1);
+            b = (int) Math.round (Math.random() * (p - 1));
         }
 
         private int getHash(short key) {
